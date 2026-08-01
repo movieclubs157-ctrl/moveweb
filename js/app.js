@@ -46,7 +46,7 @@ function renderMovies(movieList) {
         
             <img
                 class="movie-image"
-                src="${movie.imageUrl}"
+                src="assets/movieimage/${movie.id}.webp"
                 alt="${movie.name}"
                 loading="lazy"
             >
@@ -124,3 +124,22 @@ function hideLoader() {
     loader.classList.add("hidden");
 
 }
+
+const stickyFooter = document.getElementById("stickyFooter");
+const footerToggle = document.getElementById("footerToggle");
+
+footerToggle.addEventListener("click", () => {
+
+    stickyFooter.classList.toggle("collapsed");
+
+    if(stickyFooter.classList.contains("collapsed")){
+
+        footerToggle.innerHTML = "▼ Show Advertisement";
+
+    }else{
+
+        footerToggle.innerHTML = "▲ Hide Advertisement";
+
+    }
+
+});
