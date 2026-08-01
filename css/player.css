@@ -1,0 +1,235 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+
+    font-family:Poppins,sans-serif;
+
+    background:#0F172A;
+
+    color:white;
+
+}
+
+.page{
+
+    width:90%;
+
+    max-width:1200px;
+
+    margin:40px auto;
+
+}
+
+.back-btn{
+
+    display:inline-block;
+
+    text-decoration:none;
+
+    color:white;
+
+    margin-bottom:25px;
+
+    background:#1E293B;
+
+    padding:12px 20px;
+
+    border-radius:8px;
+
+    transition:.3s;
+
+}
+
+.back-btn:hover{
+
+    background:#E50914;
+
+}
+
+.poster{
+
+    width:100%;
+
+    max-width:450px;
+
+    border-radius:15px;
+
+    display:block;
+
+    margin:auto;
+
+    box-shadow:0 15px 40px rgba(0,0,0,.4);
+
+}
+
+.movie-title{
+
+    text-align:center;
+
+    margin-top:25px;
+
+    font-size:34px;
+
+}
+
+.play-button{
+
+    display:block;
+
+    margin:30px auto;
+
+    background:#E50914;
+
+    color:white;
+
+    border:none;
+
+    padding:16px 45px;
+
+    font-size:18px;
+
+    border-radius:8px;
+
+    cursor:pointer;
+
+    transition:.3s;
+
+}
+
+.play-button:hover{
+
+    background:#ff2733;
+
+}
+
+.player{
+
+    width:100%;
+
+    aspect-ratio:16/9;
+
+    border:none;
+
+    border-radius:12px;
+
+    margin-top:25px;
+
+}
+
+.not-found{
+
+    text-align:center;
+
+    margin-top:100px;
+
+}
+
+@media(max-width:768px){
+
+    .movie-title{
+
+        font-size:26px;
+
+    }
+
+}
+
+.support-box{
+
+    text-align:center;
+
+    margin-top:30px;
+
+}
+
+.support-text{
+
+    color:#cbd5e1;
+
+    margin-bottom:20px;
+
+    font-size:18px;
+
+}
+
+.countdown-box{
+
+    display:flex;
+
+    flex-direction:column;
+
+    justify-content:center;
+
+    align-items:center;
+
+    height:70vh;
+
+}
+
+.countdown-box h2{
+
+    margin-bottom:20px;
+
+}
+
+.countdown-box p{
+
+    color:#94A3B8;
+
+    margin-bottom:15px;
+
+}
+
+#timer{
+
+    font-size:100px;
+
+    color:#E50914;
+
+    font-weight:bold;
+
+}
+
+.countdown-box{
+
+    display:flex;
+
+    flex-direction:column;
+
+    justify-content:center;
+
+    align-items:center;
+
+    height:60vh;
+
+    text-align:center;
+
+}
+
+.countdown-box h2{
+
+    margin-bottom:20px;
+
+}
+
+.countdown-box p{
+
+    color:#bdbdbd;
+
+    margin-bottom:15px;
+
+}
+
+#timer{
+
+    font-size:90px;
+
+    color:#E50914;
+
+    font-weight:bold;
+
+}
