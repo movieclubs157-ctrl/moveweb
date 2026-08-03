@@ -19,4 +19,9 @@ const movies = [
         name: "Maalai Nera Malipoo (2023)",
         url: "https://nxsha.space/embed/movie/1137861",
     },
+    {
+        id: 5,
+        name: "Hallam Foe (2007)",
+        url: "https://nxsha.space/embed/movie/2239",
+    },
 ];
