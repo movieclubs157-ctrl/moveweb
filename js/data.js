@@ -24,4 +24,9 @@ const movies = [
         name: "Hallam Foe (2007)",
         url: "https://nxsha.space/embed/movie/2239",
     },
+    {
+        id: 6,
+        name: "Deadly Crush",
+        url: "https://nxsha.space/embed/movie/537523",
+    },
 ];
