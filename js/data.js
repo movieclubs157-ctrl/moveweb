@@ -29,9 +29,4 @@ const movies = [
         name: "Deadly Crush",
         url: "https://nxsha.space/embed/movie/537523",
     },
-    {
-        id: 7,
-        name: "Ehsaas Ep3",
-        url: "https://video.maalcdn.com/Feel/Ehsaas/Ehsaas%20Episode%203.mp4",
-    },
 ];
