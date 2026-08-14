@@ -29,4 +29,9 @@ const movies = [
         name: "Deadly Crush",
         url: "https://nxsha.space/embed/movie/537523",
     },
+    {
+        id: 7,
+        name: "Honey (2026)",
+        url: "https://nxsha.space/embed/movie/1607762",
+    },
 ];
