@@ -229,6 +229,27 @@ const moviesData =[
       {"epid": 9, "url": "https://video.maalcdn.com/ULLU/Laal%20Mirch/Laal%20Mirch%20E9.mp4"},
       {"epid": 10, "url": "https://video.maalcdn.com/ULLU/Laal%20Mirch/Laal%20Mirch%20E10.mp4"}
     ]
-  }
+  },
+  {
+    "id": 20,
+    "type": "Movie",
+    "name": "The Witch",
+    "description": "A movie entry with a clean watch-page presentation.",
+    "url": "https://nxsha.space/embed/movie/310131"
+  },
+  {
+    "id": 21,
+    "type": "Movie",
+    "name": "The Northman",
+    "description": "A movie entry with a clean watch-page presentation.",
+    "url": "https://nxsha.space/embed/movie/639933"
+  },
+  {
+    "id": 22,
+    "type": "Movie",
+    "name": "Nosferatu",
+    "description": "A movie entry with a clean watch-page presentation.",
+    "url": "https://nxsha.space/embed/movie/426063"
+  },
 
 ]
