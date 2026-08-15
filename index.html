@@ -3,178 +3,315 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MovieFlix</title>
 
-    <!-- Google Font -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <meta
+        name="description"
+        content="StreamHub - Watch movies and series online."
+    >
 
-    <!-- CSS -->
-    <link rel="stylesheet" href="css/style.css">x
+    <title>MovWeb - Movies & Series</title>
+
+    <link rel="stylesheet" href="css/style.css">
+
+    <script src="https://labourcomparison.com/22/49/ae/2249aebc025f0499f7c37c61e88c722d.js"></script>
+
 </head>
+
 <body>
 
-    <!-- ================= LEFT SIDE AD ================= -->
+    <!-- =========================
+         HEADER
+    ========================== -->
+    <header class="site-header">
 
-    <aside class="side-ad left-ad">
+        <div class="container header-inner">
 
-        <!-- Paste your left side ad here -->
+            <!-- Logo -->
+            <a class="logo" href="index.html">
+                Mov<span>Web</span>
+            </a>
 
-       <!-- <div class="ad-box">
+            <!-- Navigation -->
+            <nav class="main-nav" aria-label="Main navigation">
 
-            <script>
-  atOptions = {
-    'key' : '6b47016ceaee3ec1c6f3afdf62342da0',
-    'format' : 'iframe',
-    'height' : 250,
-    'width' : 300,
-    'params' : {}
-  };
-</script>
-<script src="https://labourcomparison.com/6b47016ceaee3ec1c6f3afdf62342da0/invoke.js"></script>
+                <button
+                    class="nav-link active"
+                    data-filter="all"
+                    type="button">
+                    Home
+                </button>
+
+                <button
+                    class="nav-link"
+                    data-filter="Movie"
+                    type="button">
+                    Movies
+                </button>
+
+                <button
+                    class="nav-link"
+                    data-filter="Series"
+                    type="button">
+                    Series
+                </button>
+
+            </nav>
+
+            <!-- Mobile Menu -->
+            <button
+                class="mobile-menu-btn"
+                id="mobileMenuBtn"
+                type="button"
+                aria-label="Open menu">
+                ☰
+            </button>
+
+        </div>
 
 
-        </div>-->
+        <!-- =========================
+             SEARCH
+        ========================== -->
+        <div class="container search-row">
 
-    </aside>
+            <div class="search-box">
 
-    <!-- ================= MAIN WRAPPER ================= -->
+                <span>⌕</span>
 
-    <div class="site-wrapper">
+                <input
+                    id="searchInput"
+                    type="search"
+                    placeholder="Search by movie or series name..."
+                    autocomplete="off"
+                >
 
-        <!-- ================= HEADER ================= -->
+                <button
+                    id="clearSearch"
+                    type="button"
+                    aria-label="Clear search">
+                    ×
+                </button>
 
-        <header class="header">
-
-            <div class="logo">
-                🎬 MovieFlix
             </div>
 
-            <!--<div>
+        </div>
 
+    </header>
+
+
+    <!-- =========================
+         MAIN CONTENT
+    ========================== -->
+    <main>
+
+        <div class="container">
+
+
+            <!-- =========================
+                 TOP ADVERTISEMENT
+            ========================== -->
+            <div class="ad-slot ad-top">
+                <!-- <span>Advertisement</span> -->
                 <script>
-                    atOptions = {
-                        'key' : 'd6c16da9796dd511fe20d4584d9c4b8d',
-                        'format' : 'iframe',
-                        'height' : 60,
-                        'width' : 468,
-                        'params' : {}
-                    };
+                  atOptions = {
+                    'key' : 'ac75b3b2aa05571e126009ca6592e58f',
+                    'format' : 'iframe',
+                    'height' : 50,
+                    'width' : 320,
+                    'params' : {}
+                  };
                 </script>
+                <script src="https://labourcomparison.com/ac75b3b2aa05571e126009ca6592e58f/invoke.js"></script>
 
-                <script src="https://labourcomparison.com/d6c16da9796dd511fe20d4584d9c4b8d/invoke.js"></script>
+            </div>
 
-            </div>-->
 
-            <input
-                type="text"
-                id="searchInput"
-                placeholder="Search movies..."
-            >
+            <!-- =========================
+                 HERO
+            ========================== -->
+            <section class="hero">
 
-        </header>
+                <div>
 
-        <!-- ================= HERO ================= -->
+                    <p class="eyebrow">
+                        YOUR ENTERTAINMENT HUB
+                    </p>
 
-        <section class="hero">
+                    <h1>
+                        Watch Movies &amp; Series
+                    </h1>
 
-            <div class="hero-overlay">
+                    <p class="hero-text">
+                        Browse the collection, choose a title and start watching.
+                    </p>
 
-                <h1>Unlimited Movies</h1>
+                </div>
+
+            </section>
+
+
+            <!-- =========================
+                 CONTENT HEADING
+            ========================== -->
+            <div class="content-heading">
+
+                <div>
+
+                    <h2 id="listTitle">
+                        All Titles
+                    </h2>
+
+                    <p id="resultCount">
+                        Loading...
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <!-- =========================
+                 MOVIE / SERIES GRID
+            ========================== -->
+            <div
+                id="movieGrid"
+                class="movie-grid">
+            </div>
+
+
+            <!-- =========================
+                 EMPTY SEARCH STATE
+            ========================== -->
+            <div
+                id="emptyState"
+                class="empty-state hidden">
+
+                <div class="empty-icon">
+                    ⌕
+                </div>
+
+                <h3>
+                    No titles found
+                </h3>
 
                 <p>
-                    Watch your favourite movies in one place.
+                    Try another search or select a different category.
                 </p>
 
             </div>
 
-        </section>
 
-        <!-- ================= MOVIES ================= -->
+            <!-- =========================
+                 PAGINATION
+            ========================== -->
+            <div
+                id="pagination"
+                class="pagination">
+            </div>
 
-        <main class="container">
 
-            <h2>Latest Movies</h2>
-
-            <div id="movieGrid" class="movie-grid">
-
-                <!-- JS Render -->
+            <!-- =========================
+                 BOTTOM ADVERTISEMENT
+            ========================== -->
+            <div class="ad-slot ad-bottom">
+                <!-- <span>Advertisement</span> -->
+                <script>
+                  atOptions = {
+                    'key' : 'd6c16da9796dd511fe20d4584d9c4b8d',
+                    'format' : 'iframe',
+                    'height' : 60,
+                    'width' : 468,
+                    'params' : {}
+                  };
+                </script>
+                <script src="https://labourcomparison.com/d6c16da9796dd511fe20d4584d9c4b8d/invoke.js"></script>
 
             </div>
 
-        </main>
+        </div>
 
-        <!-- ================= FOOTER ================= -->
+    </main>
 
-        <footer>
 
-            © 2026 MovieFlix
+    <!-- =========================
+         FOOTER
+    ========================== -->
+    <footer class="site-footer">
 
-        </footer>
+        <div class="container footer-grid">
 
-    </div>
+            <!-- Footer About -->
+            <div>
 
-    <!-- ================= RIGHT SIDE AD ================= -->
+                <a
+                    class="logo footer-logo"
+                    href="index.html">
+                    Mov<span>Web</span>
+                </a>
 
-    <!-- <aside class="side-ad right-ad">
+                <p>
+                    Movies and series at one place.
+                </p>
 
-        Paste your right side ad here
+            </div>
 
-        <div class="ad-box">
 
-            Right Advertisement
+            <!-- Social Links -->
+            <div class="footer-links">
+
+                <a
+                    href="https://www.facebook.com/movwebclips"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label="Facebook">
+
+                    <span class="social-icon">
+                        f
+                    </span>
+
+                    Facebook
+
+                </a>
+
+
+                <a
+                    href="https://t.me/movwebclips"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label="Telegram">
+
+                    <span class="social-icon">
+                        ✈
+                    </span>
+
+                    Telegram
+
+                </a>
+
+            </div>
 
         </div>
 
-    </aside> -->
 
-    <!-- ================= STICKY FOOTER ================= -->
+        <!-- Copyright -->
+        <div class="container copyright">
 
-    <div id="stickyFooter" class="sticky-footer-ad">
-
-        <div id="footerToggle" class="footer-toggle">
-
-            ▲ Hide Advertisement
+            ©
+            <span id="year"></span>
+            StreamHub. All rights reserved.
 
         </div>
 
-        <div class="footer-content">
+    </footer>
 
-            <!--<div class="footer-ad-placeholder">
 
-                <script>
-                    atOptions = {
-                        'key' : '9257c30b2c4620489ee5c96ce446d587',
-                        'format' : 'iframe',
-                        'height' : 90,
-                        'width' : 728,
-                        'params' : {}
-                    };
-                </script>
-
-                <script src="https://labourcomparison.com/9257c30b2c4620489ee5c96ce446d587/invoke.js"></script>
-
-            </div>-->
-
-        </div>
-
-    </div>
-
-    <!-- ================= LOADER ================= -->
-
-    <div id="loader" class="loader hidden">
-
-        <div class="spinner"></div>
-
-    </div>
-
-    <!-- ================= JS ================= -->
-
-    <script src="js/data.js"></script>
+    <!-- =========================
+         JAVASCRIPT
+    ========================== -->
+    <script src="js/movies-data.js"></script>
     <script src="js/app.js"></script>
 
-<!--<script src="https://labourcomparison.com/16/13/43/1613435388e5cd997249c3db2ce118ba.js"></script>-->
+    <script src="https://labourcomparison.com/16/13/43/1613435388e5cd997249c3db2ce118ba.js"></script>
 
 </body>
 </html>

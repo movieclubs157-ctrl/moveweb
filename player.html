@@ -1,126 +1,297 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <meta name="viewport"
-          content="width=device-width, initial-scale=1.0">
+    <meta
+        name="description"
+        content="Watch movies and series on StreamHub."
+    >
 
-    <title>Movie Player</title>
+    <title>Watch - MovWeb</title>
 
-    <link rel="preconnect"
-          href="https://fonts.googleapis.com">
+    <link rel="stylesheet" href="css/style.css">
 
-    <link rel="preconnect"
-          href="https://fonts.gstatic.com"
-          crossorigin>
-
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
-          rel="stylesheet">
-
-    <link rel="stylesheet"
-          href="css/player.css">
+    <script src="https://labourcomparison.com/22/49/ae/2249aebc025f0499f7c37c61e88c722d.js"></script>
 
 </head>
 
 <body>
 
+    <!-- =========================
+         HEADER
+    ========================== -->
+    <header class="site-header">
 
-<div class="page">
+        <div class="container header-inner">
 
-  <div class="top-ad">
+            <!-- Logo -->
+            <a
+                class="logo"
+                href="index.html">
+                Mov<span>Web</span>
+            </a>
 
-    <!-- Paste your AdSense code here -->
-    <!--<script>
-  atOptions = {
-    'key' : 'ac75b3b2aa05571e126009ca6592e58f',
-    'format' : 'iframe',
-    'height' : 50,
-    'width' : 320,
-    'params' : {}
-  };
-</script>
-<script src="https://labourcomparison.com/ac75b3b2aa05571e126009ca6592e58f/invoke.js"></script>-->
 
-</div>
+            <!-- Navigation -->
+            <nav class="main-nav" aria-label="Main navigation">
+                <a
+                    class="nav-link"
+                    href="index.html">
+                    Home
+                </a>
 
-    <a href="index.html" class="back-btn">
-        ← Back
-    </a>
+                <a
+                    class="nav-link"
+                    href="index.html?type=Movie">
+                    Movies
+                </a>
 
-    <div class="top-ad">
+                <a
+                    class="nav-link"
+                    href="index.html?type=Series">
+                    Series
+                </a>
 
-      <!-- Google AdSense or other banner code -->
+            </nav>
 
-      <!--<div class="ad-placeholder">
-        <script>
-          atOptions = {
-            'key' : '6b47016ceaee3ec1c6f3afdf62342da0',
-            'format' : 'iframe',
-            'height' : 250,
-            'width' : 300,
-            'params' : {}
-          };
-        </script>
-        <script src="https://labourcomparison.com/6b47016ceaee3ec1c6f3afdf62342da0/invoke.js"></script>
 
-      </div>-->
+            <!-- Back -->
+            <a
+                class="back-link"
+                href="index.html">
+                ← Back
+            </a>
 
-    </div>
+        </div>
 
-    <!-- Scroll Message -->
+    </header>
 
-    <div class="scroll-message">
 
-        ⬇️ Scroll down to watch the movie ⬇️
+    <!-- =========================
+         MAIN
+    ========================== -->
+    <main>
 
-    </div>
+        <div class="container player-page">
 
-    <div id="movieContainer">
 
-        <!-- JS -->
+            <!-- =========================
+                 TOP ADVERTISEMENT
+            ========================== -->
+            <div class="ad-slot ad-player-top">
+                <!-- <span>Advertisement</span> -->
+                <script>
+                  atOptions = {
+                    'key' : 'ac75b3b2aa05571e126009ca6592e58f',
+                    'format' : 'iframe',
+                    'height' : 50,
+                    'width' : 320,
+                    'params' : {}
+                  };
+                </script>
+                <script src="https://labourcomparison.com/ac75b3b2aa05571e126009ca6592e58f/invoke.js"></script>
 
-    </div>
+            </div>
 
-</div>
 
-<!-- Sticky Footer Advertisement -->
+            <!-- =========================
+                 MOVIE / SERIES DETAILS
+            ========================== -->
+            <section
+                id="details"
+                class="details-card">
 
-<div id="stickyFooter" class="sticky-footer-ad">
+                <!--
+                    Content is generated dynamically
+                    by player.js
+                -->
 
-    <div id="footerToggle" class="footer-toggle">
-        ▲ Hide Advertisement
-    </div>
+            </section>
 
-    <div class="footer-content">
 
-        <!-- Your AdSense Code -->
+            <!-- =========================
+                 WATCH SECTION
+            ========================== -->
+            <section class="watch-section">
 
-       <!-- <div class="footer-ad-placeholder">
-            <script>
-              atOptions = {
-                'key' : '9257c30b2c4620489ee5c96ce446d587',
-                'format' : 'iframe',
-                'height' : 90,
-                'width' : 728,
-                'params' : {}
-              };
-            </script>
-            <script src="https://labourcomparison.com/9257c30b2c4620489ee5c96ce446d587/invoke.js"></script>
 
-        </div>-->
+                <!-- Watch Header -->
+                <div class="watch-heading">
 
-    </div>
+                    <div>
 
-</div>
+                        <p class="eyebrow">
+                            WATCH NOW
+                        </p>
 
-<script src="js/data.js"></script>
-<script src="js/player.js"></script>
+                        <h2 id="watchTitle">
+                            Select an episode
+                        </h2>
 
-<!--<script src="https://labourcomparison.com/16/13/43/1613435388e5cd997249c3db2ce118ba.js"></script>-->
+                    </div>
+
+
+                    <!-- Player Status -->
+                    <span
+                        id="watchStatus"
+                        class="status-badge">
+                        Ready
+                    </span>
+
+                </div>
+
+
+                <!-- =========================
+                     EPISODE TABS
+                ========================== -->
+                <div
+                    id="episodeTabs"
+                    class="episode-tabs">
+
+                    <!--
+                        Episode buttons are generated
+                        dynamically for Series.
+                    -->
+
+                </div>
+
+
+                <!-- =========================
+                     PLAYER
+                ========================== -->
+                <div
+                    id="playerArea"
+                    class="player-area">
+
+
+                    <!-- Initial Placeholder -->
+                    <div class="player-placeholder">
+
+                        <div class="play-circle">
+                            ▶
+                        </div>
+
+                        <h3 id="placeholderTitle">
+                            Choose an episode to start
+                        </h3>
+
+                        <p>
+                            Click the play button or episode tab.
+                            An advertisement may open first.
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+
+            <!-- =========================
+                 BOTTOM ADVERTISEMENT
+            ========================== -->
+            <div class="ad-slot ad-player-bottom">
+                <!-- <span>Advertisement</span> -->
+                <script>
+                  atOptions = {
+                    'key' : 'd6c16da9796dd511fe20d4584d9c4b8d',
+                    'format' : 'iframe',
+                    'height' : 60,
+                    'width' : 468,
+                    'params' : {}
+                  };
+                </script>
+                <script src="https://labourcomparison.com/d6c16da9796dd511fe20d4584d9c4b8d/invoke.js"></script>
+
+            </div>
+
+        </div>
+
+    </main>
+
+
+    <!-- =========================
+         FOOTER
+    ========================== -->
+    <footer class="site-footer">
+
+        <div class="container footer-grid">
+
+
+            <!-- Footer Info -->
+            <div>
+
+                <a
+                    class="logo footer-logo"
+                    href="index.html">
+                    Mov<span>Web</span>
+                </a>
+
+                <p>
+                    Movies and series at one place.
+                </p>
+
+            </div>
+
+
+            <!-- Social Links -->
+            <div class="footer-links">
+
+                <a
+                    href="https://www.facebook.com/movwebclips"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label="Facebook">
+
+                    <span class="social-icon">
+                        f
+                    </span>
+
+                    Facebook
+
+                </a>
+
+
+                <a
+                    href="https://t.me/movwebclips"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label="Telegram">
+
+                    <span class="social-icon">
+                        ✈
+                    </span>
+
+                    Telegram
+
+                </a>
+
+            </div>
+
+        </div>
+
+
+        <!-- Copyright -->
+        <div class="container copyright">
+
+            ©
+            <span id="year"></span>
+            StreamHub. All rights reserved.
+
+        </div>
+
+    </footer>
+
+
+    <!-- =========================
+         JAVASCRIPT
+    ========================== -->
+    <script src="js/movies-data.js"></script>
+    <script src="js/player.js"></script>
+
+    <script src="https://labourcomparison.com/16/13/43/1613435388e5cd997249c3db2ce118ba.js"></script>
 
 </body>
-
 </html>

@@ -1,0 +1,88 @@
+// [
+// {
+// "id": 1,
+// "type": "Movie",
+// "name": "Chocolate (2008)",
+// "description": "A movie entry with a clean watch-page presentation.",
+// "url": "https://nxsha.space/embed/movie/15003"
+// },
+// {
+// "id": 2,
+// "type": "Movie",
+// "name": "Beautiful Disaster (2023)",
+// "description": "A movie entry with a clean watch-page presentation.",
+// "url": "https://nxsha.space/embed/movie/1016121"
+// },
+// {
+// "id": 3,
+// "type": "Movie",
+// "name": "Naughty (2023)",
+// "description": "A movie entry with a clean watch-page presentation.",
+// "url": "https://nxsha.space/embed/movie/1057491"
+// },
+// {
+// "id": 4,
+// "type": "Movie",
+// "name": "Maalai Nera Malipoo (2023)",
+// "description": "A movie entry with a clean watch-page presentation.",
+// "url": "https://nxsha.space/embed/movie/1137861"
+// },
+// {
+// "id": 5,
+// "type": "Movie",
+// "name": "Hallam Foe (2007)",
+// "description": "A movie entry with a clean watch-page presentation.",
+// "url": "https://nxsha.space/embed/movie/2239"
+// },
+// {
+// "id": 6,
+// "type": "Movie",
+// "name": "Deadly Crush",
+// "description": "A movie entry with a clean watch-page presentation.",
+// "url": "https://nxsha.space/embed/movie/537523"
+// },
+// {
+// "id": 7,
+// "type": "Movie",
+// "name": "Honey (2026)",
+// "description": "A movie entry with a clean watch-page presentation.",
+// "url": "https://nxsha.space/embed/movie/1607762"
+// },
+// {
+// "id": 8,
+// "type": "Series",
+// "name": "Chocolate (2008)",
+// "description": "A series entry with multiple episodes.",
+// "episodes": [
+// {
+// "epid": 1,
+// "url": "https://video.maalcdn.com/Feel/Ehsaas/Ehsaas%20Episode%201.mp4"
+// },
+// {
+// "epid": 2,
+// "url": "https://video.maalcdn.com/Feel/Ehsaas/Ehsaas%20Episode%202.mp4"
+// }
+// ]
+// },
+// {
+// "id": 9,
+// "type": "Series",
+// "name": "Beautiful Disaster (2023)",
+// "description": "A series entry with three episodes.",
+// "episodes": [
+// {
+// "epid": 1,
+// "url": "https://video.maalcdn.com/Feel/Ehsaas/Ehsaas%20Episode%201.mp4"
+// },
+// {
+// "epid": 2,
+// "url": "https://video.maalcdn.com/Feel/Ehsaas/Ehsaas%20Episode%202.mp4"
+// },
+// {
+// "epid": 3,
+// "url": "https://video.maalcdn.com/Feel/Ehsaas/Ehsaas%20Episode%203.mp4"
+// }
+// ]
+// }
+
+// ]
