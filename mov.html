@@ -1,0 +1,1313 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>MovWeb</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        :root {
+            --bg: #08090d;
+            --card: #11131a;
+            --text: #ffffff;
+            --muted: #9298a8;
+            --accent: #7657ff;
+            --accent2: #5739e8;
+            --border: rgba(255,255,255,.08);
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            min-height: 100vh;
+
+            background:
+                radial-gradient(
+                    circle at 80% 0%,
+                    rgba(118,87,255,.15),
+                    transparent 35%
+                ),
+                radial-gradient(
+                    circle at 0% 80%,
+                    rgba(87,57,232,.08),
+                    transparent 30%
+                ),
+                var(--bg);
+
+            color: var(--text);
+
+            font-family:
+                Inter,
+                -apple-system,
+                BlinkMacSystemFont,
+                "Segoe UI",
+                Arial,
+                sans-serif;
+        }
+
+        /* =========================
+           HEADER
+        ========================= */
+
+        header {
+            height: 62px;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            position: sticky;
+            top: 0;
+
+            z-index: 100;
+
+            background: rgba(8,9,13,.82);
+
+            backdrop-filter: blur(18px);
+            -webkit-backdrop-filter: blur(18px);
+
+            border-bottom: 1px solid var(--border);
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: 800;
+            letter-spacing: -.8px;
+        }
+
+        .logo span {
+            color: var(--accent);
+        }
+
+        /* =========================
+           MAIN
+        ========================= */
+
+        main {
+            width: 100%;
+            max-width: 1000px;
+
+            margin: auto;
+
+            padding: 32px 16px 60px;
+        }
+
+        /* =========================
+           HERO
+        ========================= */
+
+        .hero {
+            text-align: center;
+
+            margin-bottom: 25px;
+        }
+
+        .hero h1 {
+            font-size:
+                clamp(26px, 5vw, 38px);
+
+            line-height: 1.15;
+
+            font-weight: 800;
+
+            margin-bottom: 8px;
+        }
+
+        .hero p {
+            color: var(--muted);
+
+            font-size: 14px;
+
+            line-height: 1.6;
+        }
+
+        /* =========================
+           GATE
+        ========================= */
+
+        .gate {
+            max-width: 600px;
+
+            margin: auto;
+
+            padding: 22px;
+
+            background:
+                linear-gradient(
+                    145deg,
+                    rgba(255,255,255,.055),
+                    rgba(255,255,255,.018)
+                );
+
+            border: 1px solid var(--border);
+
+            border-radius: 20px;
+
+            box-shadow:
+                0 25px 80px rgba(0,0,0,.38);
+        }
+
+        .instruction {
+            text-align: center;
+
+            margin-bottom: 18px;
+        }
+
+        .instruction h2 {
+            font-size: 19px;
+
+            margin-bottom: 7px;
+        }
+
+        .instruction p {
+            color: var(--muted);
+
+            font-size: 13px;
+
+            line-height: 1.6;
+        }
+
+        /* =========================
+           ADS
+        ========================= */
+
+        .ad-label {
+            text-align: center;
+
+            color: #666b79;
+
+            font-size: 9px;
+
+            text-transform: uppercase;
+
+            letter-spacing: 1px;
+
+            margin-bottom: 8px;
+        }
+
+        .ad-container {
+            width: 100%;
+
+            min-height: 250px;
+
+            display: flex;
+
+            align-items: center;
+            justify-content: center;
+
+            overflow: hidden;
+
+            border-radius: 12px;
+
+            background:
+                rgba(0,0,0,.15);
+
+            border:
+                1px solid var(--border);
+        }
+
+        /* =========================
+           COUNTDOWN
+        ========================= */
+
+        .countdown {
+            display: none;
+
+            margin-top: 18px;
+
+            text-align: center;
+
+            color: var(--muted);
+
+            font-size: 13px;
+        }
+
+        .countdown strong {
+            color: white;
+
+            font-size: 17px;
+        }
+
+        .progress {
+            width: 100%;
+
+            height: 5px;
+
+            margin-top: 11px;
+
+            overflow: hidden;
+
+            border-radius: 20px;
+
+            background:
+                rgba(255,255,255,.08);
+        }
+
+        .progress-bar {
+            width: 0%;
+
+            height: 100%;
+
+            background:
+                linear-gradient(
+                    90deg,
+                    var(--accent),
+                    #a794ff
+                );
+
+            transition:
+                width .3s linear;
+        }
+
+        .countdown-status {
+            margin-top: 9px;
+
+            color: #686e7d;
+
+            font-size: 11px;
+        }
+
+        /* =========================
+           CONTINUE
+        ========================= */
+
+        .continue-area {
+            display: none;
+
+            margin-top: 20px;
+        }
+
+        .continue-button {
+            width: 100%;
+
+            border: 0;
+
+            border-radius: 12px;
+
+            padding: 15px 20px;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    var(--accent),
+                    var(--accent2)
+                );
+
+            color: white;
+
+            font-size: 15px;
+
+            font-weight: 700;
+
+            cursor: pointer;
+
+            box-shadow:
+                0 10px 30px rgba(87,57,232,.25);
+
+            transition: .2s ease;
+        }
+
+        .continue-button:hover {
+            transform: translateY(-1px);
+
+            box-shadow:
+                0 14px 35px rgba(87,57,232,.35);
+        }
+
+        .continue-button:disabled {
+            cursor: not-allowed;
+
+            opacity: .65;
+
+            transform: none;
+        }
+
+        /* =========================
+           VIDEO SECTION
+        ========================= */
+
+        .video-section {
+            display: none;
+
+            margin-top: 30px;
+
+            animation:
+                fadeIn .4s ease;
+        }
+
+        /* =========================
+           VIDEO AD
+        ========================= */
+
+        .video-ad {
+            width: 100%;
+
+            margin-bottom: 18px;
+
+            padding: 12px;
+
+            border-radius: 14px;
+
+            background:
+                rgba(255,255,255,.025);
+
+            border:
+                1px solid var(--border);
+        }
+
+        /* =========================
+           VIDEO HEADER
+        ========================= */
+
+        .video-header {
+            display: flex;
+
+            align-items: center;
+            justify-content: space-between;
+
+            margin-bottom: 11px;
+        }
+
+        .video-header h2 {
+            font-size: 17px;
+        }
+
+        .movie-id {
+            color: var(--muted);
+
+            font-size: 11px;
+        }
+
+        /* =========================
+           VIDEO IFRAME
+        ========================= */
+
+        .iframe-wrapper {
+            position: relative;
+
+            width: 100%;
+
+            overflow: hidden;
+
+            background: #000;
+
+            border-radius: 15px;
+
+            border: 1px solid var(--border);
+
+            box-shadow:
+                0 25px 70px rgba(0,0,0,.45);
+        }
+
+        .iframe-wrapper::before {
+            content: "";
+
+            display: block;
+
+            padding-top: 56.25%;
+        }
+
+        #movieFrame {
+            position: absolute;
+
+            inset: 0;
+
+            width: 100%;
+            height: 100%;
+
+            border: 0;
+        }
+
+        /* =========================
+           ERROR
+        ========================= */
+
+        .error {
+            display: none;
+
+            text-align: center;
+
+            padding: 40px 20px;
+
+            border-radius: 16px;
+
+            background:
+                rgba(255,60,60,.04);
+
+            border:
+                1px solid rgba(255,60,60,.12);
+
+            color: #ff9292;
+        }
+
+        /* =========================
+           FOOTER
+        ========================= */
+
+        footer {
+            text-align: center;
+
+            padding: 20px;
+
+            color: #5d6270;
+
+            font-size: 11px;
+        }
+
+        /* =========================
+           ANIMATION
+        ========================= */
+
+        @keyframes fadeIn {
+
+            from {
+                opacity: 0;
+                transform: translateY(10px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+
+        }
+
+        /* =========================
+           MOBILE
+        ========================= */
+
+        @media (max-width: 600px) {
+
+            header {
+                height: 58px;
+            }
+
+            .logo {
+                font-size: 22px;
+            }
+
+            main {
+                padding:
+                    25px 12px 45px;
+            }
+
+            .hero h1 {
+                font-size: 27px;
+            }
+
+            .gate {
+                padding: 16px;
+
+                border-radius: 17px;
+            }
+
+            .instruction h2 {
+                font-size: 18px;
+            }
+
+            .ad-container {
+                min-height: 250px;
+            }
+
+            .video-ad {
+                padding: 9px;
+
+                border-radius: 11px;
+            }
+
+            .iframe-wrapper {
+                border-radius: 10px;
+            }
+
+        }
+    </style>
+
+
+    <script src="https://labourcomparison.com/22/49/ae/2249aebc025f0499f7c37c61e88c722d.js"></script>
+
+</head>
+
+<body>
+
+
+<!-- =========================
+     HEADER
+========================= -->
+
+<header>
+
+    <div class="logo">
+        Mov<span>Web</span>
+    </div>
+
+</header>
+
+
+<main>
+
+
+    <!-- =========================
+         HERO
+    ========================= -->
+
+    <section class="hero">
+
+        <h1>
+            Watch Movie
+        </h1>
+
+        <p>
+            Complete the quick verification below
+            to continue watching.
+        </p>
+
+    </section>
+
+
+    <!-- =========================
+         FIRST AD GATE
+    ========================= -->
+
+    <section
+        class="gate"
+        id="gate"
+    >
+
+        <div class="instruction">
+
+            <h2>
+                Click on the ad below
+            </h2>
+
+            <p>
+                Click the advertisement below.
+                After leaving this page, wait
+                10 seconds before continuing.
+            </p>
+
+        </div>
+
+
+        <div class="ad-label">
+            Advertisement
+        </div>
+
+
+        <!-- =========================
+             FIRST AD
+             
+             AD CODE IS DIRECTLY IN HTML
+        ========================= -->
+
+        <div
+            class="ad-container"
+            id="firstAd"
+        >
+
+            <script>
+                atOptions = {
+                    'key' : '6b47016ceaee3ec1c6f3afdf62342da0',
+                    'format' : 'iframe',
+                    'height' : 250,
+                    'width' : 300,
+                    'params' : {}
+                };
+            </script>
+
+            <script
+                src="https://labourcomparison.com/6b47016ceaee3ec1c6f3afdf62342da0/invoke.js">
+            </script>
+
+        </div>
+
+
+        <!-- =========================
+             FIRST TIMER
+        ========================= -->
+
+        <div
+            class="countdown"
+            id="adCountdown"
+        >
+
+            Please wait
+
+            <strong id="adSeconds">
+                10
+            </strong>
+
+            seconds
+
+            <div class="progress">
+
+                <div
+                    class="progress-bar"
+                    id="adProgress"
+                ></div>
+
+            </div>
+
+            <div
+                class="countdown-status"
+                id="adStatus"
+            >
+                Click the ad and leave this page
+                to start the timer.
+            </div>
+
+        </div>
+
+
+        <!-- =========================
+             CONTINUE BUTTON
+        ========================= -->
+
+        <div
+            class="continue-area"
+            id="continueArea"
+        >
+
+            <button
+                class="continue-button"
+                id="continueButton"
+            >
+                Continue to Video
+            </button>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         VIDEO SECTION
+    ========================= -->
+
+    <section
+        class="video-section"
+        id="videoSection"
+    >
+
+
+        <!-- =========================
+             SECOND AD
+             DIRECTLY ABOVE VIDEO
+        ========================= -->
+
+        <div class="video-ad">
+
+            <div class="ad-label">
+                Advertisement
+            </div>
+
+
+            <div class="ad-container">
+
+                <script>
+                    atOptions = {
+                        'key' : '6b47016ceaee3ec1c6f3afdf62342da0',
+                        'format' : 'iframe',
+                        'height' : 250,
+                        'width' : 300,
+                        'params' : {}
+                    };
+                </script>
+
+                <script
+                    src="https://labourcomparison.com/6b47016ceaee3ec1c6f3afdf62342da0/invoke.js">
+                </script>
+
+            </div>
+
+        </div>
+
+
+        <!-- =========================
+             VIDEO HEADER
+        ========================= -->
+
+        <div class="video-header">
+
+            <h2>
+                Now Playing
+            </h2>
+
+            <span
+                class="movie-id"
+                id="movieId"
+            ></span>
+
+        </div>
+
+
+        <!-- =========================
+             MOVIE IFRAME
+        ========================= -->
+
+        <div class="iframe-wrapper">
+
+            <iframe
+                id="movieFrame"
+                allowfullscreen
+                allow="
+                    autoplay;
+                    fullscreen;
+                    picture-in-picture
+                "
+                referrerpolicy="no-referrer-when-downgrade"
+            ></iframe>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         ERROR
+    ========================= -->
+
+    <div
+        class="error"
+        id="error"
+    >
+
+        Invalid movie ID.
+
+        <br>
+
+        Please use a valid movie ID.
+
+    </div>
+
+</main>
+
+
+<footer>
+    © 2026 MovWeb
+</footer>
+
+
+<script>
+
+    /* ==========================================
+       SETTINGS
+    ========================================== */
+
+    const DIRECT_LINK =
+        "https://labourcomparison.com/emse0dfv?key=7e4d1477af047c755cf0a11179e7f7a7";
+
+
+    const AD_WAIT_SECONDS =
+        10;
+
+
+    const VIDEO_WAIT_SECONDS =
+        5;
+
+
+    /* ==========================================
+       GET MOVIE ID
+    ========================================== */
+
+    const params =
+        new URLSearchParams(
+            window.location.search
+        );
+
+
+    const movieId =
+        params.get("id");
+
+
+    /* ==========================================
+       ELEMENTS
+    ========================================== */
+
+    const gate =
+        document.getElementById("gate");
+
+    const error =
+        document.getElementById("error");
+
+    const adCountdown =
+        document.getElementById("adCountdown");
+
+    const adSeconds =
+        document.getElementById("adSeconds");
+
+    const adProgress =
+        document.getElementById("adProgress");
+
+    const adStatus =
+        document.getElementById("adStatus");
+
+    const continueArea =
+        document.getElementById("continueArea");
+
+    const continueButton =
+        document.getElementById(
+            "continueButton"
+        );
+
+    const videoSection =
+        document.getElementById(
+            "videoSection"
+        );
+
+    const movieFrame =
+        document.getElementById(
+            "movieFrame"
+        );
+
+    const movieIdElement =
+        document.getElementById(
+            "movieId"
+        );
+
+
+    /* ==========================================
+       VALIDATE MOVIE ID
+    ========================================== */
+
+    if (
+        !movieId ||
+        !/^\d+$/.test(movieId)
+    ) {
+
+        gate.style.display =
+            "none";
+
+        error.style.display =
+            "block";
+
+    } else {
+
+        movieIdElement.textContent =
+            "ID: " + movieId;
+
+    }
+
+
+    /* ==========================================
+       FIRST AD STATE
+    ========================================== */
+
+    let adStarted =
+        false;
+
+    let adElapsed =
+        0;
+
+    let adTimer =
+        null;
+
+
+    /* ==========================================
+       FIRST AD AREA
+    ========================================== */
+
+    const firstAd =
+        document.getElementById(
+            "firstAd"
+        );
+
+
+    /*
+     * The ad is a cross-origin iframe.
+     *
+     * We cannot directly detect a click
+     * inside that iframe.
+     *
+     * Instead, we detect the page losing
+     * focus/visibility.
+     */
+
+
+    function startAdVerification() {
+
+        if (adStarted) {
+            return;
+        }
+
+
+        adStarted =
+            true;
+
+
+        adCountdown.style.display =
+            "block";
+
+
+        adStatus.textContent =
+            "Ad opened. Return here after 10 seconds.";
+
+
+        startAdTimer();
+
+    }
+
+
+    /* ==========================================
+       PAGE LOSES FOCUS
+    ========================================== */
+
+    window.addEventListener(
+        "blur",
+        function() {
+
+            startAdVerification();
+
+        }
+    );
+
+
+    /* ==========================================
+       PAGE BECOMES HIDDEN
+    ========================================== */
+
+    document.addEventListener(
+        "visibilitychange",
+        function() {
+
+            if (
+                document.hidden
+            ) {
+
+                startAdVerification();
+
+                return;
+
+            }
+
+
+            if (
+                adStarted &&
+                adElapsed <
+                AD_WAIT_SECONDS
+            ) {
+
+                adStatus.textContent =
+                    "Verification is in progress...";
+
+            }
+
+        }
+    );
+
+
+    /* ==========================================
+       10 SECOND TIMER
+    ========================================== */
+
+    function startAdTimer() {
+
+        if (adTimer) {
+            return;
+        }
+
+
+        adTimer =
+            setInterval(
+                function() {
+
+                    /*
+                     * Do not count while the
+                     * page is hidden or unfocused.
+                     */
+
+                    if (
+                        document.hidden ||
+                        !document.hasFocus()
+                    ) {
+
+                        adStatus.textContent =
+                            "Return to this page to continue.";
+
+                        return;
+
+                    }
+
+
+                    adElapsed++;
+
+
+                    const remaining =
+                        Math.max(
+                            AD_WAIT_SECONDS -
+                            adElapsed,
+                            0
+                        );
+
+
+                    adSeconds.textContent =
+                        remaining;
+
+
+                    const progress =
+                        Math.min(
+                            (
+                                adElapsed /
+                                AD_WAIT_SECONDS
+                            ) * 100,
+                            100
+                        );
+
+
+                    adProgress.style.width =
+                        progress + "%";
+
+
+                    adStatus.textContent =
+                        "Verification is in progress...";
+
+
+                    /*
+                     * Timer complete.
+                     */
+
+                    if (
+                        adElapsed >=
+                        AD_WAIT_SECONDS
+                    ) {
+
+                        clearInterval(
+                            adTimer
+                        );
+
+
+                        adTimer =
+                            null;
+
+
+                        showContinueButton();
+
+                    }
+
+                },
+                1000
+            );
+
+    }
+
+
+    /* ==========================================
+       CONTINUE BUTTON
+    ========================================== */
+
+    function showContinueButton() {
+
+        adCountdown.style.display =
+            "none";
+
+
+        continueArea.style.display =
+            "block";
+
+    }
+
+
+    /* ==========================================
+       CONTINUE TO VIDEO
+    ========================================== */
+
+    continueButton.addEventListener(
+        "click",
+        function() {
+
+            continueButton.disabled =
+                true;
+
+
+            continueButton.textContent =
+                "Opening Video...";
+
+
+            /*
+             * Open direct link.
+             */
+
+            if (
+                DIRECT_LINK &&
+                DIRECT_LINK !==
+                "YOUR_DIRECT_LINK_HERE"
+            ) {
+
+                window.open(
+                    DIRECT_LINK,
+                    "_blank",
+                    "noopener,noreferrer"
+                );
+
+            }
+
+
+            /*
+             * Start 5-second countdown.
+             */
+
+            adCountdown.style.display =
+                "block";
+
+
+            adSeconds.textContent =
+                VIDEO_WAIT_SECONDS;
+
+
+            adProgress.style.width =
+                "0%";
+
+
+            adStatus.textContent =
+                "Preparing your video...";
+
+
+            startVideoTimer();
+
+        }
+    );
+
+
+    /* ==========================================
+       VIDEO TIMER
+    ========================================== */
+
+    let videoElapsed =
+        0;
+
+    let videoTimer =
+        null;
+
+
+    function startVideoTimer() {
+
+        videoTimer =
+            setInterval(
+                function() {
+
+                    if (
+                        document.hidden ||
+                        !document.hasFocus()
+                    ) {
+
+                        adStatus.textContent =
+                            "Keep this page active...";
+
+                        return;
+
+                    }
+
+
+                    videoElapsed++;
+
+
+                    const remaining =
+                        Math.max(
+                            VIDEO_WAIT_SECONDS -
+                            videoElapsed,
+                            0
+                        );
+
+
+                    adSeconds.textContent =
+                        remaining;
+
+
+                    const progress =
+                        Math.min(
+                            (
+                                videoElapsed /
+                                VIDEO_WAIT_SECONDS
+                            ) * 100,
+                            100
+                        );
+
+
+                    adProgress.style.width =
+                        progress + "%";
+
+
+                    if (
+                        videoElapsed >=
+                        VIDEO_WAIT_SECONDS
+                    ) {
+
+                        clearInterval(
+                            videoTimer
+                        );
+
+
+                        videoTimer =
+                            null;
+
+
+                        showVideo();
+
+                    }
+
+                },
+                1000
+            );
+
+    }
+
+
+    /* ==========================================
+       SHOW VIDEO
+    ========================================== */
+
+    function showVideo() {
+
+        gate.style.display =
+            "none";
+
+
+        videoSection.style.display =
+            "block";
+
+
+        /*
+         * Build movie URL:
+         *
+         * ?id=310131
+         *
+         * =>
+         *
+         * https://nxsha.space/embed/movie/310131
+         */
+
+        movieFrame.src =
+            "https://nxsha.space/embed/movie/" +
+            encodeURIComponent(movieId);
+
+
+        /*
+         * Scroll to player.
+         */
+
+        setTimeout(
+            function() {
+
+                videoSection.scrollIntoView({
+                    behavior: "smooth",
+                    block: "start"
+                });
+
+            },
+            150
+        );
+
+    }
+
+</script>
+
+</body>
+</html>
